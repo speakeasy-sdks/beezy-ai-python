@@ -1,0 +1,27 @@
+speakeasyVersion: 1.330.0
+sources:
+    openapi:
+        sourceNamespace: openapi
+        sourceRevisionDigest: sha256:4a0b85b0e3e2b946885eb4436e0012734d93920b775e7a95c723d8ebdaa94c98
+        sourceBlobDigest: sha256:dfcfaa5f9170f7114d88dbda7c899e474534923d9568814c73ce06671e23f6db
+        tags:
+            - latest
+targets:
+    my-first-target:
+        source: openapi
+        sourceNamespace: openapi
+        sourceRevisionDigest: sha256:4a0b85b0e3e2b946885eb4436e0012734d93920b775e7a95c723d8ebdaa94c98
+        sourceBlobDigest: sha256:dfcfaa5f9170f7114d88dbda7c899e474534923d9568814c73ce06671e23f6db
+        outLocation: /Users/ndimares/Desktop/ai-example/beezy-ai-python
+workflow:
+    workflowVersion: 1.0.0
+    sources:
+        openapi:
+            inputs:
+                - location: ../openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/disintegrator/disintegrator/openapi
+    targets:
+        my-first-target:
+            target: python
+            source: openapi
